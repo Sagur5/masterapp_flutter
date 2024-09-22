@@ -1,0 +1,49 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
+import 'package:flutter/material.dart';
+
+class HomePageSlider extends StatefulWidget {
+  const HomePageSlider({super.key});
+
+  @override
+  State<HomePageSlider> createState() => _HomePageSliderState();
+}
+
+class _HomePageSliderState extends State<HomePageSlider> {
+  double _currentSliderValue = 10; // Initialize the variable properly
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter Slider Widget'),
+        centerTitle: true,
+        backgroundColor: Colors.red,
+      ),
+      body: SafeArea(
+        child: Center(
+          child: Slider(
+            value: _currentSliderValue,
+            activeColor: Colors.red,
+            inactiveColor: Colors.indigo,
+            min: 0,
+            max: 100,
+            divisions: 100,
+            label: _currentSliderValue.round().toString(),
+            onChanged: (double value) {
+              setState(() {
+                _currentSliderValue = value;
+              });
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: HomePageSlider(),
+  ));
+}
