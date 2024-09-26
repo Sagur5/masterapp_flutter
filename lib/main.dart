@@ -1,16 +1,12 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
-import 'package:masterapp_flutter/tababarprovider/tabbar.dart';
-import 'package:masterapp_flutter/tababarprovider/tabcontroller.dart';
-import 'package:provider/provider.dart';
+import 'package:masterapp_flutter/modalBottom_sheet.dart';
+
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => TabControllerProvider(),
-      child: MyApp(),
-    ),
+    MyApp(),
   );
 }
 
@@ -19,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage9(),
+      home: HomePage100(),
     );
   }
 }

@@ -7,7 +7,7 @@ class FutureBuilderPage extends StatelessWidget {
 
   Future<String> getData() {
     return Future.delayed(Duration(seconds: 3), () {
-      return "Data Loaded"; // Return the data instead of throwing an error
+      return "Data Loaded"; // Return the data
     });
   }
 
@@ -30,7 +30,7 @@ class FutureBuilderPage extends StatelessWidget {
             if (snapshot.hasData) {
               return Text(snapshot.data.toString()); // Show data
             } else {
-              return Text(snapshot.error.toString()); // Show error (won't be reached now)
+              return Text(snapshot.error?.toString() ?? "Unknown error"); // Show error
             }
           },
         ),
